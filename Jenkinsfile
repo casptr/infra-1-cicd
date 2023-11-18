@@ -1,5 +1,11 @@
 pipeline {
-    stage('Preparation') {
-        echo 'Success'
+    agent any
+
+    stages {
+        stage('Preperation') {
+            steps {
+                echo "Success!"
+            }
         }
+    }
 }
