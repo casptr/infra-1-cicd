@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Preperation') {
+        stage('Preparation') {
             steps {
-                echo "Success!"
+                build job: 'CheckIfDbRunning' 
+                build job: 'StartApp'
+            }
+        }
+        stage('Tests') {
+            steps {
+                echo "Running tests"
             }
         }
     }
